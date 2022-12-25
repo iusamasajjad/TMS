@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ui.users;
-
+import ui.DepositeSecurity;
 /**
  *
  * @author HAMZA
