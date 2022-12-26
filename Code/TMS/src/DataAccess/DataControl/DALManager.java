@@ -54,6 +54,9 @@ public class DALManager {
     public Response deleteEmployee(String selectedId, Response objResponse) {
         try{
             Connection  dbConnection = objConnection.getConnection();
+            if(dbConnection == null){
+                objResponse.messagesList.add(new Message("error in conncetion", MessageType.Exception));
+            }
             objModifier.deleteEmployee(selectedId,objResponse,dbConnection);
             return  objResponse;           
         }catch(Exception e){
