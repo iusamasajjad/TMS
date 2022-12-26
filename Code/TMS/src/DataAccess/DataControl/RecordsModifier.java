@@ -14,7 +14,7 @@ import Model.dto.Response;
 
 public class RecordsModifier {
 
-    void deleteEmployee(String selectedId, Response objResponse, Connection dbConnection) {
+    void removeCitizen(String selectedId, Response objResponse, Connection dbConnection) {
         try{
             PreparedStatement p;// (FirstName,LastName,Title) VALUES (?,?,?);");
             p = dbConnection.prepareStatement("Delete FROM Employees WHERE EmployeeID=?");

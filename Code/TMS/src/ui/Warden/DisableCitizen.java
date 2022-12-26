@@ -144,7 +144,7 @@ public class DisableCitizen extends javax.swing.JFrame {
         String selectedId = getSelectedEmployeeId();
         if(selectedId != null){
          JOptionPane.showMessageDialog(this, "Deleting record with "+ selectedId);
-         Response objResponse =  objController.deleteEmployee(selectedId);
+         Response objResponse =  objController.removeCitizen(selectedId);
          if(objResponse == null){
              JOptionPane.showMessageDialog(this, "Deleting not working "+ objResponse);
          }
