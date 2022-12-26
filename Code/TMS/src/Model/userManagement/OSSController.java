@@ -31,9 +31,9 @@ public class OSSController {
         return objResponse;
     }
 
-    public Response deleteEmployee(String selectedId) {
+    public Response removeCitizen(String selectedId) {
         Response objResponse = SMSFactory.getResponseInstance();
-        objDAL.deleteEmployee(selectedId, objResponse);
+        objDAL.removeCitizen(selectedId, objResponse);
         return objResponse;
     }
 }
