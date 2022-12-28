@@ -4,12 +4,18 @@
  */
 package ui.Warden;
 
+import javax.swing.JOptionPane;
+import Model.dto.Response;
+//import CommonHandler;
+import Model.userManagement.OSSController;
+
 /**
  *
  * @author 92333
  */
 public class DisableCitizen extends javax.swing.JFrame {
 
+    OSSController objController;
     /**
      * Creates new form WardenView
      */
@@ -69,6 +75,11 @@ public class DisableCitizen extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(java.awt.Color.white);
         jButton1.setText("Disable Citizen");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,6 +129,28 @@ public class DisableCitizen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private String getSelectedEmployeeId() {
+        if(jTextField2.getText().toString() !=null)
+        {
+        return jTextField2.getText().toString();
+        }
+        else {
+        JOptionPane.showMessageDialog(this, "Select a record and then try again.");
+        }
+        return null;
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String selectedId = getSelectedEmployeeId();
+        if(selectedId != null){
+         JOptionPane.showMessageDialog(this, "Deleting record with "+ selectedId);
+         Response objResponse =  objController.removeCitizen(selectedId);
+         if(objResponse == null){
+             JOptionPane.showMessageDialog(this, "Deleting not working "+ objResponse);
+         }
+         CommonHandler.handleResponse(objResponse, jLabel1);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

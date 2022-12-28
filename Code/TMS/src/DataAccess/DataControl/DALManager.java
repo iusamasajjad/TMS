@@ -51,10 +51,13 @@ public class DALManager {
         }
     }
 
-    public Response deleteEmployee(String selectedId, Response objResponse) {
+    public Response removeCitizen(String selectedId, Response objResponse) {
         try{
             Connection  dbConnection = objConnection.getConnection();
-            objModifier.deleteEmployee(selectedId,objResponse,dbConnection);
+            if(dbConnection == null){
+                objResponse.messagesList.add(new Message("error in conncetion", MessageType.Exception));
+            }
+            objModifier.removeCitizen(selectedId,objResponse,dbConnection);
             return  objResponse;           
         }catch(Exception e){
         objResponse.messagesList.add(new Message("Ooops! Failed to delete employee, Please contact support that there an issue while saving new employee.", MessageType.Error));
