@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import Model.dto.EmployeeDTO;
 import Model.dto.Response;
 import Model.validator.CommonValidator;
+import javax.swing.JOptionPane;
 
 
 public class OSSController {
@@ -32,6 +33,10 @@ public class OSSController {
     }
 
     public Response removeCitizen(String selectedId) {
+        if(selectedId !=null)
+        {
+            System.out.println(selectedId);
+        }
         Response objResponse = SMSFactory.getResponseInstance();
         objDAL.removeCitizen(selectedId, objResponse);
         return objResponse;

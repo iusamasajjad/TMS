@@ -143,11 +143,12 @@ public class DisableCitizen extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String selectedId = getSelectedEmployeeId();
         if(selectedId != null){
-         JOptionPane.showMessageDialog(this, "Deleting record with "+ selectedId);
          Response objResponse =  objController.removeCitizen(selectedId);
-         if(objResponse == null){
-             JOptionPane.showMessageDialog(this, "Deleting not working "+ objResponse);
-         }
+         JOptionPane.showMessageDialog(this, "Deleting record with "+ selectedId);
+        
+//         if(objResponse == null){
+//             JOptionPane.showMessageDialog(this, "Deleting not working "+ objResponse);
+//         }
          CommonHandler.handleResponse(objResponse, jLabel1);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

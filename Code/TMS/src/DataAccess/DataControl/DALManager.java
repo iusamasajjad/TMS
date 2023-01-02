@@ -64,6 +64,5 @@ public class DALManager {
         objResponse.messagesList.add(new Message(e.getMessage() + "\n Stack Track:\n"+e.getStackTrace(), MessageType.Exception));
         }
         return null;
-    }
-    
+    }  
 }

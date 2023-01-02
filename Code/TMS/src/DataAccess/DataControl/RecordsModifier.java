@@ -16,10 +16,13 @@ public class RecordsModifier {
 
     void removeCitizen(String selectedId, Response objResponse, Connection dbConnection) {
         try{
+            if(selectedId==null){
+                System.out.println(selectedId);
+            }
             PreparedStatement p;// (FirstName,LastName,Title) VALUES (?,?,?);");
             p = dbConnection.prepareStatement("Delete FROM Employees WHERE EmployeeID=?");
             p.setString(1, selectedId);
-            int rowsInserted = p.executeUpdate();
+            int rowsInserted = p.executeUpdate(selectedId);
             if(rowsInserted > 0){
                 objResponse.messagesList.add(new Message("Employee deleted successfully.", MessageType.Information));
             }
