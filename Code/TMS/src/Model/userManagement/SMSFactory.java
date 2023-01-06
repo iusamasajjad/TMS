@@ -18,8 +18,8 @@ public class SMSFactory {
         return new DALManager(new RecordsMapper());
     }
 
-    public static OSSController getInstanceOfSMSController() {
-        return new OSSController();
+    public static TMSController getInstanceOfSMSController() {
+        return new TMSController();
     }
 
     static Response getResponseInstance() {

@@ -6,11 +6,14 @@
 package Model.dto;
 
 
-public class EmployeeDTO {
+public class CitizenDTO {
 
     public String Id;
     public String FirstName;
     public String LastName;
+    public String vehOwner;
+    public String vehType;
+    public String vehNumber;
     public String Title;
     public String Address;
     public String TitleOfCourtesy;
@@ -22,4 +25,5 @@ public class EmployeeDTO {
     public String Country;
     public String HomePhone;
     public String Notes;
+    public String amount;
 }

@@ -4,7 +4,7 @@
  */
 package Model.validator;
 
-import Model.dto.EmployeeDTO;
+import Model.dto.CitizenDTO;
 import Model.dto.Message;
 import Model.dto.MessageType;
 import Model.dto.Response;
@@ -12,7 +12,7 @@ import Model.dto.Response;
 
 public class CommonValidator {
 
-    public static void validateEmployee(EmployeeDTO objEmp, Response objResponse) {
+    public static void validateEmployee(CitizenDTO objEmp, Response objResponse) {
         if(objEmp.FirstName == null || objEmp.FirstName.length() < 3){
             objResponse.messagesList.add(new Message("FIrst Name is not valid, Provide valid first name with at least 3 characters.",MessageType.Error));
         }else if(objEmp.Address.length() <10){

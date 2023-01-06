@@ -7,7 +7,7 @@ package DataAccess.DataControl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import Model.dto.EmployeeDTO;
+import Model.dto.CitizenDTO;
 import Model.dto.Message;
 import Model.dto.MessageType;
 import Model.dto.Response;
@@ -15,7 +15,7 @@ import Model.dto.Response;
 
 public class RecordsAdder {
 
-    void saveEmployee(EmployeeDTO objEmp, Response objResponse, Connection dbConnection) {
+    void saveEmployee(CitizenDTO objEmp, Response objResponse, Connection dbConnection) {
         try{
             PreparedStatement p = dbConnection.prepareStatement("INSERT INTO EMployees (FirstName,LastName,Title,TitleOfCourtesy,BirthDate,Address,Country,City,PostalCode,HomePhone,Notes) VALUES (?,?,?,?,?,?,?,?,?,?,?);");
             p.setString(1, objEmp.LastName);

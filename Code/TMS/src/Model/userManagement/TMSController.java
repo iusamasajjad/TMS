@@ -7,22 +7,22 @@ package Model.userManagement;
 
 import DataAccess.DataControl.DALManager;
 import java.util.ArrayList;
-import Model.dto.EmployeeDTO;
+import Model.dto.CitizenDTO;
 import Model.dto.Response;
 import Model.validator.CommonValidator;
 
 
-public class OSSController {
+public class TMSController {
     DALManager objDAL;
-    public OSSController(){
+    public TMSController(){
     objDAL = SMSFactory.getInstanceOfDALManager();
     }
 
-    public ArrayList<EmployeeDTO> viewEmployees(String searchKey) {
-        return objDAL.getEmployeesList(searchKey);
+    public ArrayList<CitizenDTO> viewCitizen(String searchKey) {
+        return objDAL.getCitizenList(searchKey);
     }
 
-    public Response addEmployee(EmployeeDTO objEmp) {
+    public Response addEmployee(CitizenDTO objEmp) {
         Response objResponse = SMSFactory.getResponseInstance();
         CommonValidator.validateEmployee(objEmp,objResponse);
         if(objResponse.isSuccessfull()){

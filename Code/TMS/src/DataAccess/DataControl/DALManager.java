@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import Model.userManagement.SMSFactory;
-import Model.dto.EmployeeDTO;
+import Model.dto.CitizenDTO;
 import Model.dto.Message;
 import Model.dto.MessageType;
 import Model.dto.Response;
@@ -23,25 +23,25 @@ public class DALManager {
     RecordsModifier objModifier;
 
     public DALManager(RecordsMapper mapper){
-    objConnection = new SQLConnection("jdbc:sqlserver://DESKTOP-46Q00AK:1433;databaseName=master;","master", "sa","root");
+    objConnection = new SQLConnection("jdbc:sqlserver://DESKTOP-DTBFB9K:1433;databaseName=Tvcs;databaseName=Tvcs;","Tvcs", "sa","root");
     objReader = new DBReader();
     objAdder = SMSFactory.getInstanceOfAdder();
     this.objMapper=mapper;
     objModifier = SMSFactory.getInstanceOfModifier();
     }
-    public ArrayList<EmployeeDTO> getEmployeesList(String searchKey) {
+    public ArrayList<CitizenDTO> getCitizenList(String searchKey) {
                 
         Connection  dbConnection = objConnection.getConnection();
-        String viewEmployeesQuery = "Select * from Employees";
+        String viewEmployeesQuery = "Select * from vehcileInfo";
         if(searchKey == null || searchKey.length() > 0)
         {
-            viewEmployeesQuery += " where FirstName LIKE '%"+searchKey+"%' OR LastName LIKE '%"+searchKey+"%' OR Title LIKE '%"+searchKey+"%';";
+            viewEmployeesQuery += " where vehNo LIKE '%"+searchKey+"%' OR vehNo LIKE '%"+searchKey+"%' OR vehNo LIKE '%"+searchKey+"%';";
         }
         ResultSet rs = objReader.getRecords(viewEmployeesQuery, dbConnection);
-        return objMapper.getEmployees(rs);        
+        return objMapper.getCitizen(rs);        
     }  
 
-    public void saveEmployee(EmployeeDTO objEmp, Response objResponse) {
+    public void saveEmployee(CitizenDTO objEmp, Response objResponse) {
         try{
             Connection  dbConnection = objConnection.getConnection();
             objAdder.saveEmployee(objEmp,objResponse,dbConnection);            
@@ -62,5 +62,5 @@ public class DALManager {
         }
         return null;
     }
-    
+
 }
