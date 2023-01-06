@@ -17,8 +17,8 @@ public class Register extends javax.swing.JFrame {
     public Register() {
         initComponents();
     }
-SignIn objLogin;
-    Register(SignIn aThis) {
+LogIn objLogin;
+    Register(LogIn aThis) {
         initComponents();
         objLogin = aThis;
     }
@@ -196,7 +196,7 @@ SignIn objLogin;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    new SignIn().setVisible(true);
+    new LogIn().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 

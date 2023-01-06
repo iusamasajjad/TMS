@@ -7,7 +7,7 @@ package ui;
 import ui.Warden.DisableCitizen;
 import ui.Warden.View_Violation;
 import ui.users.RecordViolations;
-import ui.users.SignIn;
+import ui.users.LogIn;
 /**
  *
  * @author HAMZA
@@ -171,7 +171,7 @@ public class dash extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        new SignIn().setVisible(true);
+        new LogIn().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 

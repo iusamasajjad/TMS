@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ui;
-import ui.users.SignIn;
+import ui.users.LogIn;
 /**
  *
  * @author HAMZA
@@ -107,7 +107,7 @@ public class DepositeSecurity extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      new SignIn().setVisible(true);
+      new LogIn().setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

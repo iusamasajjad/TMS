@@ -17,7 +17,7 @@ import Model.dto.Response;
  */
 public class CommonHandler {
 
-    static void handleResponse(Response objResponse,JComponent uiComponent) {
+    public static void handleResponse(Response objResponse,JComponent uiComponent) {
         if(objResponse.hasError()){
             if(uiComponent instanceof JLabel){
                 ((JLabel)uiComponent).setText(objResponse.getErrorMessages());

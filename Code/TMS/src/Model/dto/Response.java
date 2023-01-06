@@ -37,4 +37,12 @@ public class Response {
     public boolean isSuccessfull() {
         return !hasError();
     }
+
+    public boolean hasWarning() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean hasInfo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
