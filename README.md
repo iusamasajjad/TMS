@@ -35,8 +35,6 @@ Mt. Usama Sajjad
 
 Mr. Shah Rafi Alam Khattak
 
-Miss. Areeba Tanveer
-
 Supervisor: Mr. Mukhtair Zamin
 
 🎓 Academic Context
